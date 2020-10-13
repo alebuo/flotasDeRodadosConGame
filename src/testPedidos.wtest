@@ -1,0 +1,39 @@
+import otrosRodados.*
+import colores.*
+import pedidos.*
+
+test "Auto puede satisfacer pedido 1" {
+	
+	const cachito = new Corsa(color=rojo)
+	const pedido1 = new Pedidos(distancia=960,tiempoMaximo=8,cantidadDePasajeros=4,coloresIncompatibles=[azul,negro])
+				
+	assert.that(pedido1.autoPuedeSatisfacerPedido(cachito))
+
+}
+
+test "Auto puede satisfacer pedido agregando rojo como incompatiblidad" {
+	
+	const cachito = new Corsa(color=rojo)
+	const pedido1 = new Pedidos(distancia=960,tiempoMaximo=8,cantidadDePasajeros=4,coloresIncompatibles=[azul,negro,rojo])
+				
+	assert.that(not pedido1.autoPuedeSatisfacerPedido(cachito))
+
+}
+
+test "Auto puede satisfacer pedido ahora con 6 pasajeros" {
+	
+	const cachito = new Corsa(color=rojo)
+	const pedido1 = new Pedidos(distancia=960,tiempoMaximo=8,cantidadDePasajeros=6,coloresIncompatibles=[azul,negro])
+				
+	assert.that(not pedido1.autoPuedeSatisfacerPedido(cachito))
+
+}
+
+test "Auto puede satisfacer pedido ahora con máximo 6 horas" {
+	
+	const cachito = new Corsa(color=rojo)
+	const pedido1 = new Pedidos(distancia=960,tiempoMaximo=6,cantidadDePasajeros=4,coloresIncompatibles=[azul,negro])
+				
+	assert.that(not pedido1.autoPuedeSatisfacerPedido(cachito))
+
+}

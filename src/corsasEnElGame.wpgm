@@ -1,7 +1,32 @@
 import wollok.game.*
-//Trabajando en archivo
+import otrosRodados.*
+import colores.*
+import trafic.*
+import dependencias.*
+
 program corsasEnElGame {
-	// hacer las inicializaciones necesarias 
+	const cachito = new Corsa(color=rojo, position=game.at(3,5))
+	game.title("El viaje del cachito")
+	game.height(10)
+	game.width(10)
 	
+	game.addVisual(cachito)
+	game.ground("fondo.png")
+	
+	keyboard.h().onPressDo { game.say(cachito, "Hola Valu!") }
+	
+	keyboard.right().onPressDo { cachito.moverALaDerecha() }
+	keyboard.left().onPressDo { cachito.moverALaIzquierda() }
+	keyboard.up().onPressDo { cachito.moverArriba() }
+	keyboard.down().onPressDo { cachito.moverAbajo() }
+	
+	keyboard.b().onPressDo { cachito.image(blanco.image()) }
+	keyboard.r().onPressDo { cachito.image(rojo.image()) }
+	keyboard.a().onPressDo { cachito.image(azul.image()) }
+	keyboard.e().onPressDo { cachito.image(beige.image()) }
+	keyboard.n().onPressDo { cachito.image(negro.image()) }
+	keyboard.v().onPressDo { cachito.image(verde.image()) }
+
+	keyboard.s().onPressDo { game.stop() }
 	game.start()
 }
