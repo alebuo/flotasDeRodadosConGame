@@ -23,8 +23,6 @@ class Dependencia {
 	//return registroDePedidos.filter({a=>a.autoPuedeSatisfacerPedido(auto)})
 	}
 	method esteColorEsIncompatibleEnTodosLosPedidos(color){
-		return registroDePedidos.all({a=>a.coloresIncompatibles()== color})
-	}	
-	method relajarTodosLosPedidos(){registroDePedidos.map({a=>a.relajar()})	}	
-}
-
+		return registroDePedidos.all({a=>a.coloresIncompatibles()== color})}	
+	method relajarTodosLosPedidos(){registroDePedidos.map({a=>a.relajar()})}
+	}
