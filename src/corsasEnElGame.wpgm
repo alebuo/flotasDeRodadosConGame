@@ -13,7 +13,7 @@ program corsasEnElGame {
 	game.addVisual(cachito)
 	game.ground("fondo.png")
 	
-	keyboard.h().onPressDo { game.say(cachito, "Hola Valu!") }
+	keyboard.h().onPressDo { game.say(cachito, "Hola Cachito!") }
 	
 	keyboard.right().onPressDo { cachito.moverALaDerecha() }
 	keyboard.left().onPressDo { cachito.moverALaIzquierda() }
